@@ -1,0 +1,241 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+ 
+section, 
+header, 
+#git, 
+#projects-container, 
+#contactMe {
+    width: 100%;
+    min-height: 100px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+ 
+header {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    padding: 60px;
+    flex-direction: column;
+}
+
+header h1, header h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+/* ANIMATION DU H1 PORTFOLIO */
+#portfolio {
+    opacity: 0;
+    transform: translateY(-150px);
+    animation: slideDown 2s ease forwards;
+}
+
+@keyframes slideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ANIMATION PRESENTATION */
+#presentation {
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateX(-240px);  
+    animation: slideRight 2s ease forwards;
+    width: 600px;
+    margin: 30px;
+}
+
+@keyframes slideRight {
+    to {
+        opacity: 1;
+        transform: translateX(0); 
+    }
+}
+
+#git h2 {
+    text-align: center;
+}
+
+#portfolio {
+    margin: 0px;
+}
+
+#hello button {
+    background-color: #E8CA79;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 5px;
+}
+
+#titleHello {
+    margin-bottom: 0px;
+}
+
+#titleJob {
+    margin-top: 0px;
+}
+
+#france {
+    margin-top: 0px;
+}
+
+#hello {
+    padding: 20px;
+}
+
+#hello button:hover {
+    transition: all 0.2s ease-in;
+    background-color: #d7bb6d;
+}
+
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 50px auto;
+    color: #ddd;
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateY(140px);  
+    animation: slideUp 1s ease forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#passion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#cv {
+    background-color: #E8CA79;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px;
+    font-size: 0.6em;
+}
+
+#cv:hover {
+    background-color: #C3A85F;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+#skill {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;      
+    margin: 40px auto;
+    width: 100%;    
+    text-align: center;
+}
+
+.projects-skill {
+    display: flex;            
+    justify-content: center; 
+    flex-wrap: wrap;         
+    gap: 20px;      
+}
+
+.skill-card {
+    background: #1A1A1A;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.skill-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    background: #262626;
+}
+
+/* PROJECTS */
+#projects-container {
+    text-align: center;
+    padding: 50px;
+    color: black;
+    background-color: white;
+    flex-direction: column;
+}
+
+#projet {
+    background-color: #E8CA79;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px;
+    font-size: 0.6em;
+}
+
+#projet:hover {
+    background-color: #C3A85F;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* CONTACT */
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#contactMe {
+    background: #000;
+    padding: 60px 20px;
+    text-align: center;
+    flex-direction: column;
+}
+
+#contactMe h2 {
+    position: relative;
+    margin-bottom: 0px;
+}
+
+#contactMe p {
+    margin-top: 0px;
+}
+
+/* FOOTER */
+#footer {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9em;
+}
