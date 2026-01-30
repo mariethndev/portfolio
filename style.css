@@ -867,3 +867,29 @@
         background: white;
     }
 }
+
+/* cv */
+
+.cv {
+    display: flex;
+    justify-content: center;
+}
+
+.cv-buttons a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.cv-buttons {
+    padding: 10px;
+    margin-bottom: 60px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.cv-buttons:hover {
+    cursor: pointer;
+    background-color: #fefefe;
+}
