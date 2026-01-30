@@ -1,71 +1,383 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Marie</title>
+    <meta name="description" content="Portfolio - Marie Thirion, Développeuse Web Full-Stack">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>Marie Thirion | Développeuse Web Full-Stack</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
 </head>
-
 <body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" title="Changer le thème">
+        <span class="theme-icon">🌙</span>
+    </button>
 
-    <header>
-        <h1 id="portfolio">Portfolio.</h1>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">MT.</a>
+            <ul class="nav-menu">
+                <li><a href="#profil" class="nav-link">Profil</a></li>
+                <li><a href="#competences" class="nav-link">Compétences</a></li>
+                <li><a href="#projets" class="nav-link">Projets</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero / Profil Section -->
+    <header id="profil" class="hero">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-text">
+                    <span class="hero-badge"></span>
+                    <h1 class="hero-title">
+                    sites web, landing page, applications mobiles
+                    </h1>
+                    <p class="hero-subtitle">
+                        Developpeuse full stack  passionnée 
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="https://github.com/mariethndev" target="_blank" class="btn btn-secondary">
+                         Découvrez mon GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="profile-image-wrapper">
+                        <img src="209117011.jpg" alt="Marie Thirion" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
     </header>
 
-    <section id="presentation">
-        <div id="hello">
-            <h1 id="titleHello">Je suis Marie Thirion</h1>
-            <h2 id="titleJob">Développeuse web full-Stack </h2>
-            <p id="france">depuis 2025.</p>
+    <!-- Featured Projects -->
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets Récents</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1a1a1a;
+        }
+
+        .featured-projects {
+            padding: 6rem 2rem;
+            background: #fafbfc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        /* Container des projets */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        /* Carte projet */
+        .section-projects {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e8e8e8;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            min-height: 320px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Conteneur média (image ou vidéo) */
+        .project-media {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        /* Vidéo */
+        .section-projects video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        /* Image */
+        .section-projects img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+
+        .section-projects:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+            border-color: #d8d8d8;
+        }
+
+        .section-projects:hover video,
+        .section-projects:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Titre projet */
+        .zen-apply-lp {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+            line-height: 1.4;
+            min-height: 2.8rem;
+        }
+
+        /* Accent coloré en haut */
+        .section-projects::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #cfff00, #e035ff);
+            z-index: 10;
+        }
+
+        .section-projects:nth-child(2)::after {
+            background: linear-gradient(90deg, #00d9ff, #cfff00);
+        }
+
+        .section-projects:nth-child(3)::after {
+            background: linear-gradient(90deg, #e035ff, #00d9ff);
+        }
+
+        /* Lien voir projet */
+        .section-projects a {
+            text-decoration: none;
+            background: #1a1a1a;
+            border-radius: 8px;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid #1a1a1a;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            align-self: flex-start;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+
+        .section-projects a:hover {
+            background: transparent;
+            color: #1a1a1a;
+            border-color: #1a1a1a;
+        }
+
+        /* États avec accents neon */
+        .section-projects:nth-child(1) a:hover {
+            color: #cfff00;
+            border-color: #cfff00;
+        }
+
+        .section-projects:nth-child(2) a:hover {
+            color: #00d9ff;
+            border-color: #00d9ff;
+        }
+
+        .section-projects:nth-child(3) a:hover {
+            color: #e035ff;
+            border-color: #e035ff;
+        }
+
+        /* Animation au chargement */
+        .section-projects {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .section-projects:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .section-projects:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .section-projects:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .featured-projects {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .section-projects {
+                min-height: 280px;
+                padding: 1.5rem;
+            }
+
+            .project-media {
+                height: 180px;
+                margin-bottom: 1rem;
+            }
+
+            .zen-apply-lp {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="projets" class="featured-projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Projets Récents</h2>
+                <p class="section-description">Découvrez mes dernières réalisations</p>
+            </div>
+
+            <div class="projects-container">
+                <!-- Projet 1 avec VIDÉO -->
+                <div class="section-projects">
+                    <div>
+                        <div class="project-media">
+                            <video autoplay muted loop playsinline>
+                                <source src="./2026-01-28-16-18-49.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo
+                            </video>
+                        </div>
+                        <h3 class="zen-apply-lp">
+                            Refonte de la Landing page de ZenApply.io, stage professionnel du 05/01/2026 au 30/01/2026.
+                        </h3>
+                    </div>
+                    <a href="https://zenapply.io/">Voir le projet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+    
+    <!-- Expertise Section -->
+    <section class="expertise">
+        <div class="section-header">
+            <h2>Mes compétences</h2>
+            <p>Découvrez mes dernières réalisations</p>
+        </div>
+
+        <div class="expertise-grid">
+            <div class="expertise-card expertise-frontend">
+                <h3>Frontend</h3>
+                <p>Interfaces modernes, réactives et accessibles</p>
+                <ul class="expertise-tags">
+                    <li>HTML5</li>
+                    <li>CSS3/SCSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+
+            <div class="expertise-card expertise-backend">
+                <h3>Backend</h3>
+                <p>Architecture robuste et base de données optimisée</p>
+                <ul class="expertise-tags">
+                    <li>PHP</li>
+                    <li>MySQL</li>
+                    <li>REST API</li>
+                </ul>
+            </div>
+
+            <div class="expertise-card expertise-design">
+                <h3>Design & UX</h3>
+                <p>Conception centrée utilisateur et expériences intuitives</p>
+                <ul class="expertise-tags">
+                    <li>UX Research</li>
+                    <li>Prototyping</li>
+                    <li>Responsive</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section id="about">
-            <div id ="passion">
-                <h2>Je suis passionnée par le dev-web</h2>
-                <button id="cv" onclick="ouvrirCV()">Voir mon CV</button>
-            </div>
-    </section>
-
-    <section id="skill">
-        <h2>Je parle...</h2>        
-        <div class="projects-skill">
-            <div class="skill-card">
-                <img src="pictures/html.png" alt="HTML5">
-            </div>
-            <div class="skill-card">
-                <img src="pictures/css.png" alt="CSS3">
-            </div>
-            <div class="skill-card">
-                <img src="pictures/js.png" alt="JavaScript">
-            </div>
-             <div class="skill-card">
-                <img src="pictures/php.png" alt="BootStrap">
-            </div>
-            <div class="skill-card">
-                <img src="pictures/php.png" alt="Sass">
-            </div>
-            <div class="skill-card">
-                <img src="pictures/php.png" alt="Php & MySQL">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p>&copy; 2026, crée par Marie Thirion. Tous droits réservés.</p>
+                </div>
             </div>
         </div>
-    </section> 
-        
-    <section id="contactMe">
-        <div id="contact">
-            <h2>Contactez-moi</h2>
-            <p>contactmariecode@gmail.com</p>
-        </div>
-    </section>
-
-    <section id="footer">
-        <footer>
-            <p>Crée par Marie Thirion, le 21 janvier 2026.</p>
-        </footer>
-    </section>
+    </footer>
 
     <script src="script.js"></script>
-    
 </body>
 </html>
