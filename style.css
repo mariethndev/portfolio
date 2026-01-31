@@ -101,7 +101,21 @@ NAVIGATION AMÉLIORÉE
     }
 
     .nav-link {
-        font-size: 0.85rem;
+        font-size: 0.45rem;
+    }
+}
+
+@media (max-width: 376px) {
+    .nav-menu {
+        gap: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.45rem;
+    }
+
+    .link-contact {
+        overflow: hidden;
     }
 }
 
