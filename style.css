@@ -105,7 +105,7 @@ NAVIGATION AMÉLIORÉE
     }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 500px) {
     .nav-menu {
         gap: 1.5rem;
     }
