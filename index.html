@@ -31,7 +31,9 @@
                 <div class="hero-text">
                     <span class="hero-badge"></span>
                     <h1 class="hero-title">
-                    sites web, landing page, applications mobiles
+                    <span class="hero-link" data-category="web">sites web</span>, 
+                    <span class="hero-link" data-category="landing">landing page</span>, 
+                    <span class="hero-link" data-category="mobile">applications mobiles</span>
                     </h1>
                     <p class="hero-subtitle">
                         Developpeuse full stack  passionnée 
@@ -57,11 +59,14 @@
         <div class="container">
             <div class="section-header">
                 <h2>Projets Récents</h2>
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="landing">Landing Pages</button>
+                </div>
             </div>
 
             <div class="projects-container">
-                <!-- Projet 1 avec VIDÉO -->
-                <div class="section-projects">
+                <!-- Projet 1 : Landing Page -->
+                <div class="section-projects" data-project-type="landing">
                     <div>
                         <div class="project-media">
                             <video autoplay muted loop playsinline>
@@ -75,12 +80,39 @@
                     </div>
                     <a href="https://zenapply.io/">Voir le projet</a>
                 </div>
+
+                <!-- Ajoutez d'autres projets ici selon votre catégorie -->
+                <!-- 
+                <div class="section-projects" data-project-type="web">
+                    <div>
+                        <div class="project-media">
+                            <video autoplay muted loop playsinline>
+                                <source src="./project.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo
+                            </video>
+                        </div>
+                        <h3>Mon site web</h3>
+                    </div>
+                    <a href="#">Voir le projet</a>
+                </div>
+
+                <div class="section-projects" data-project-type="mobile">
+                    <div>
+                        <div class="project-media">
+                            <video autoplay muted loop playsinline>
+                                <source src="./project.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo
+                            </video>
+                        </div>
+                        <h3>Mon app mobile</h3>
+                    </div>
+                    <a href="#">Voir le projet</a>
+                </div>
+                -->
             </div>
         </div>
     </section>
-</body>
-</html>
-    
+
     <!-- Expertise Section -->
     <section class="expertise">
         <div class="section-header">
@@ -138,5 +170,63 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Initialiser avec le filtre landing par défaut
+        window.addEventListener('DOMContentLoaded', function() {
+            const landingBtn = document.querySelector('.filter-btn[data-filter="landing"]');
+            if (landingBtn) {
+                landingBtn.click();
+            }
+        });
+
+        // Gestion des clics sur les liens du titre hero
+        document.querySelectorAll('.hero-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const category = this.dataset.category;
+                const filterMap = {
+                    'web': 'web',
+                    'landing': 'landing',
+                    'mobile': 'mobile'
+                };
+                
+                // Scroll vers la section projets
+                const projectsSection = document.getElementById('projets');
+                projectsSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Activer le filtre correspondant
+                setTimeout(() => {
+                    const filterBtn = document.querySelector(`.filter-btn[data-filter="${filterMap[category]}"]`);
+                    if (filterBtn) {
+                        filterBtn.click();
+                    }
+                }, 500);
+            });
+        });
+
+        // Gestion des boutons de filtre
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filter = this.dataset.filter;
+                
+                // Mettre à jour le style des boutons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filtrer les projets
+                document.querySelectorAll('.section-projects').forEach(project => {
+                    if (filter === 'all') {
+                        project.style.display = 'block';
+                    } else {
+                        if (project.dataset.projectType === filter) {
+                            project.style.display = 'block';
+                        } else {
+                            project.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

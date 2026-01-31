@@ -605,6 +605,13 @@
             cursor: pointer;
         }
 
+        .filter-btn {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 10px;
+            color: white;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .featured-projects {
@@ -774,7 +781,15 @@
    RESPONSIVE DESIGN
    ============================================ */
 
+ /* FIX ESPACE BLANC EN HAUT - VERSION MOBILE */
+
 @media (max-width: 768px) {
+    .hero {
+        margin-top: 20px !important;
+        min-height: auto !important;
+        padding: 1rem 0;
+    }
+
     .hero-wrapper {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -787,54 +802,12 @@
     .hero-subtitle {
         font-size: 1.2rem;
     }
-
-    .about-wrapper,
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .nav-menu {
-        gap: 1.5rem;
-    }
-
-    .theme-toggle {
-        top: 1rem;
-        right: 1rem;
-        width: 45px;
-        height: 45px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .section-header h2 {
-        font-size: 2rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .expertise-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 480px) {
-    .nav-menu {
-        display: none;
-    }
-
     .hero {
-        padding: 100px 1rem 60px;
-        min-height: 80vh;
+        margin-top: 10px !important;
+        padding: 0.5rem 0;
     }
 
     .hero-title {
