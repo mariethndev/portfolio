@@ -562,7 +562,11 @@ HERO SECTION
         .projects-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+<<<<<<< HEAD
             gap: 2rem;
+=======
+            gap: 5rem;
+>>>>>>> dc7a6d8 (Initial commit portfolio)
             justify-content: center;
             align-items: stretch;
         }
@@ -640,7 +644,16 @@ HERO SECTION
             color: white;
         }
 
+<<<<<<< HEAD
         /* Responsive */
+=======
+        @media (max-width: 500px) {
+            .navbar {
+                display: none;
+            }
+        }
+
+>>>>>>> dc7a6d8 (Initial commit portfolio)
         @media (max-width: 768px) {
             .featured-projects {
                 padding: 4rem 1.5rem;
@@ -670,9 +683,13 @@ HERO SECTION
             }
         }
 
+<<<<<<< HEAD
 /* ============================================
    EXPERTISE SECTION
    ============================================ */
+=======
+        /* EXPERTISE SECTION */
+>>>>>>> dc7a6d8 (Initial commit portfolio)
 
         .expertise {
             padding: 6rem 2rem;
@@ -747,8 +764,11 @@ HERO SECTION
             transition: all 0.3s ease;
         }
 
+<<<<<<< HEAD
 
         /* Responsive */
+=======
+>>>>>>> dc7a6d8 (Initial commit portfolio)
         @media (max-width: 768px) {
             .expertise {
                 padding: 4rem 1.5rem;
@@ -768,10 +788,14 @@ HERO SECTION
             }
         }
  
+<<<<<<< HEAD
 
 /* ============================================
    FOOTER
    ============================================ */
+=======
+    /* FOOTER */
+>>>>>>> dc7a6d8 (Initial commit portfolio)
 
    .cv-buttons {
     background-color: #0f0f0f;
@@ -859,7 +883,10 @@ HERO SECTION
     transform: scale(1.05);
 }
 
+<<<<<<< HEAD
 /* Responsive */
+=======
+>>>>>>> dc7a6d8 (Initial commit portfolio)
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
