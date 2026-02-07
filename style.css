@@ -1080,3 +1080,64 @@ CARROUSEL LIGHTBOX
         font-size: 0.75rem;
     }
 }
+
+/* ============================================
+BOUTON THEME MOBILE EN HAUT À DROITE
+============================================ */
+
+@media (max-width: 500px) {
+    .navbar {
+        display: none;
+    }
+    
+    /* Afficher uniquement le bouton de thème sur mobile */
+    .theme-toggle {
+        display: flex !important;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 2px solid var(--text-dark);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    body.dark-mode .theme-toggle {
+        background: rgba(0, 0, 0, 0.9);
+        border: 2px solid #ffffff;
+    }
+    
+    .theme-toggle:hover {
+        background: var(--accent-lime);
+        border-color: var(--accent-lime);
+        transform: rotate(20deg);
+    }
+    
+    /* Ajuster la hero section pour ne pas être cachée par le bouton */
+    .hero {
+        margin-top: 20px;
+        padding-top: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        padding-right: 70px; /* Espace pour le bouton */
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-toggle {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        padding-right: 60px;
+    }
+}
