@@ -7,11 +7,8 @@
     <meta name="theme-color" content="#1a1a1a">
     <title>Marie Thirion | Développeuse Web Full-Stack</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="navbar-container">
             <a href="#" class="navbar-logo">MT.</a>
@@ -24,7 +21,6 @@
         </div>
     </nav>
 
-    <!-- Hero / Profil Section -->
     <header id="profil" class="hero">
         <div class="container">
             <div class="hero-wrapper">
@@ -36,14 +32,13 @@
                     <span class="hero-link" data-category="mobile">applications mobiles</span>
                     </h1>
                     <p class="hero-subtitle">
-                        Developpeuse full stack  passionnée 
+                        Developpeuse full stack passionnée 
                     </p>
                     <div class="hero-buttons">
                         <a href="https://github.com/mariethndev" target="_blank" class="btn btn-secondary">
                          Découvrez mon GitHub
                         </a>
                     </div>
-
                 </div>
                 <div class="hero-visual">
                     <div class="profile-image-wrapper">
@@ -52,7 +47,6 @@
                 </div>
             </div>
         </div>
- 
     </header>
 
     <section id="projets" class="featured-projects">
@@ -65,27 +59,61 @@
             </div>
 
             <div class="projects-container">
-                <!-- Projet 1 : Landing Page -->
                 <div class="section-projects" data-project-type="landing">
                     <div>
-                        <div class="project-media">
-                            <video autoplay muted loop playsinline>
-                                <source src="./2026-01-28-16-18-49.mp4" type="video/mp4">
-                                Votre navigateur ne supporte pas la vidéo
-                            </video>
+                        <div class="project-media clickable-media" data-media-type="image">
+                           <img src="acme.png" alt="ACME projet">
+                           <div class="zoom-indicator">Cliquer pour agrandir</div>
                         </div>
-                        <h3 class="zen-apply-lp">
-                            Refonte de la Landing page de ZenApply.io, stage professionnel du 05/01/2026 au 30/01/2026.
+                        <h3 class="acme">
+                            Acme est un projet fictif de boutique de beauté conçu dans le but de développer mes compétences en HTML et CSS, ainsi que de réaliser le design complet d’une landing page.
                         </h3>
                     </div>
-                    <a href="https://zenapply.io/">Voir le projet</a>
                 </div>
+            </div>
 
+            <div class="projects-container">
+                <div class="section-projects" data-project-type="landing">
+                    <div>
+                        <div class="project-media clickable-media" data-media-type="image">
+                           <img src="hexo.png" alt="hexo">
+                           <div class="zoom-indicator">Cliquer pour agrandir</div>
+                        </div>
+                        <h3 class="hexo">
+                            Hexo est un projet conçu pour approfondir ma pratique de JavaScript et de la librairie GSAP.                       
+                         </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-container">
+                <div class="section-projects" data-project-type="landing">
+                    <div>
+                        <div class="project-media clickable-media" data-media-type="image">
+                           <img src="huhu.png" alt="huhu">
+                           <div class="zoom-indicator">Cliquer pour agrandir</div>
+                        </div>
+                        <h3 class="huhu">
+                            Projet de plateforme numérique spécialisée dans les ventes aux enchères de chevaux                        
+                        </h3>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Expertise Section -->
+    <!-- Modal Lightbox -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <video id="lightbox-video" controls>
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+        <div class="lightbox-caption"></div>
+    </div>
+
     <section id="competences" class="expertise">
         <div class="section-header">
             <h2>Mes compétences</h2>
@@ -94,10 +122,7 @@
         <div class="expertise-grid">
             <div class="expertise-card expertise-frontend">
                 <h3>Frontend</h3>
-<<<<<<< HEAD
                 <p>Interfaces modernes, réactives et accessibles</p>
-=======
->>>>>>> dc7a6d8 (Initial commit portfolio)
                 <ul class="expertise-tags">
                     <li>HTML5</li>
                     <li>CSS3/SCSS</li>
@@ -133,7 +158,6 @@
     </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -151,63 +175,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Initialiser avec le filtre landing par défaut
-        window.addEventListener('DOMContentLoaded', function() {
-            const landingBtn = document.querySelector('.filter-btn[data-filter="landing"]');
-            if (landingBtn) {
-                landingBtn.click();
-            }
-        });
-
-        // Gestion des clics sur les liens du titre hero
-        document.querySelectorAll('.hero-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const category = this.dataset.category;
-                const filterMap = {
-                    'web': 'web',
-                    'landing': 'landing',
-                    'mobile': 'mobile'
-                };
-                
-                // Scroll vers la section projets
-                const projectsSection = document.getElementById('projets');
-                projectsSection.scrollIntoView({ behavior: 'smooth' });
-                
-                // Activer le filtre correspondant
-                setTimeout(() => {
-                    const filterBtn = document.querySelector(`.filter-btn[data-filter="${filterMap[category]}"]`);
-                    if (filterBtn) {
-                        filterBtn.click();
-                    }
-                }, 500);
-            });
-        });
-
-        // Gestion des boutons de filtre
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const filter = this.dataset.filter;
-                
-                // Mettre à jour le style des boutons
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Filtrer les projets
-                document.querySelectorAll('.section-projects').forEach(project => {
-                    if (filter === 'all') {
-                        project.style.display = 'block';
-                    } else {
-                        if (project.dataset.projectType === filter) {
-                            project.style.display = 'block';
-                        } else {
-                            project.style.display = 'none';
-                        }
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
