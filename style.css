@@ -1119,7 +1119,6 @@ MOBILE - BOUTON THEME EN HAUT À DROITE
         transform: rotate(20deg) !important;
     }
     
-    /* Ajuster la hero section */
     .hero {
         margin-top: 0px;
         padding-top: 1rem;
@@ -1128,6 +1127,7 @@ MOBILE - BOUTON THEME EN HAUT À DROITE
     .hero-title {
         font-size: 2rem;
         padding-right: 0px;
+        margin-top: 10px;
     }
 }
 
