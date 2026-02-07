@@ -1082,62 +1082,65 @@ CARROUSEL LIGHTBOX
 }
 
 /* ============================================
-BOUTON THEME MOBILE EN HAUT À DROITE
+MOBILE - BOUTON THEME EN HAUT À DROITE
 ============================================ */
 
 @media (max-width: 500px) {
+    /* Cacher complètement la navbar */
     .navbar {
-        display: none;
+        display: none !important;
     }
     
-    /* Afficher uniquement le bouton de thème sur mobile */
-    .theme-toggle {
+    /* Afficher UNIQUEMENT le bouton de thème en position fixe */
+    body .theme-toggle {
         display: flex !important;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 9999;
-        width: 50px;
-        height: 50px;
-        background: rgba(255, 255, 255, 0.9);
-        border: 2px solid var(--text-dark);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        position: fixed !important;
+        top: 20px !important;
+        right: 20px !important;
+        z-index: 9999 !important;
+        width: 50px !important;
+        height: 50px !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        border: 2px solid #1a1a1a !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+        backdrop-filter: blur(10px) !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
     
     body.dark-mode .theme-toggle {
-        background: rgba(0, 0, 0, 0.9);
-        border: 2px solid #ffffff;
+        background: rgba(0, 0, 0, 0.9) !important;
+        border: 2px solid #ffffff !important;
     }
     
     .theme-toggle:hover {
-        background: var(--accent-lime);
-        border-color: var(--accent-lime);
-        transform: rotate(20deg);
+        background: #ccff00 !important;
+        border-color: #ccff00 !important;
+        transform: rotate(20deg) !important;
     }
     
-    /* Ajuster la hero section pour ne pas être cachée par le bouton */
+    /* Ajuster la hero section */
     .hero {
-        margin-top: 20px;
-        padding-top: 2rem;
+        margin-top: 0px;
+        padding-top: 1rem;
     }
     
     .hero-title {
         font-size: 2rem;
-        padding-right: 70px; /* Espace pour le bouton */
+        padding-right: 0px;
     }
 }
 
 @media (max-width: 480px) {
-    .theme-toggle {
-        top: 15px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
+    body .theme-toggle {
+        top: 15px !important;
+        right: 15px !important;
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 1.1rem !important;
     }
     
     .hero-title {
         font-size: 1.8rem;
-        padding-right: 60px;
     }
 }
