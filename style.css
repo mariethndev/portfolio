@@ -1085,7 +1085,7 @@ CARROUSEL LIGHTBOX
 MOBILE - BOUTON THEME EN HAUT À DROITE
 ============================================ */
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
     /* Cacher complètement la navbar */
     .navbar {
         display: none !important;
@@ -1127,6 +1127,10 @@ MOBILE - BOUTON THEME EN HAUT À DROITE
     .hero-title {
         font-size: 2rem;
         padding-right: 0px;
+        margin-top: 10px;
+    }
+
+    .hero-link {
         margin-top: 10px;
     }
 }
