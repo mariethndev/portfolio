@@ -7,11 +7,8 @@
     <meta name="theme-color" content="#1a1a1a">
     <title>Marie Thirion | Développeuse Web Full-Stack</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="navbar-container">
             <a href="#" class="navbar-logo">MT.</a>
@@ -21,29 +18,32 @@
                 <li><a href="#projets" class="nav-link">Projets</a></li>
                 <li><a href="#contact" class="nav-link link-contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon">🌙</span>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero / Profil Section -->
     <header id="profil" class="hero">
+        <div class="hero-background">
+            <img src="bg-hero.png" alt="Background">
+        </div>
         <div class="container">
             <div class="hero-wrapper">
                 <div class="hero-text">
-                    <span class="hero-badge"></span>
                     <h1 class="hero-title">
-                    <span class="hero-link" data-category="web">sites web</span>
-                    <span class="hero-link" data-category="landing">landing page</span>
-                    <span class="hero-link" data-category="mobile">applications mobiles</span>
+                        <span class="hero-link" data-category="web">sites web</span>
+                        <span class="hero-link" data-category="landing">landing page</span>
+                        <span class="hero-link" data-category="mobile">applications mobiles</span>
                     </h1>
                     <p class="hero-subtitle">
-                        Developpeuse full stack  passionnée 
+                        Developpeuse full stack passionnée 
                     </p>
                     <div class="hero-buttons">
                         <a href="https://github.com/mariethndev" target="_blank" class="btn btn-secondary">
                          Découvrez mon GitHub
                         </a>
                     </div>
-
                 </div>
                 <div class="hero-visual">
                     <div class="profile-image-wrapper">
@@ -52,7 +52,6 @@
                 </div>
             </div>
         </div>
- 
     </header>
 
     <section id="projets" class="featured-projects">
@@ -65,27 +64,67 @@
             </div>
 
             <div class="projects-container">
-                <!-- Projet 1 : Landing Page -->
                 <div class="section-projects" data-project-type="landing">
                     <div>
                         <div class="project-media">
-                            <video autoplay muted loop playsinline>
-                                <source src="./2026-01-28-16-18-49.mp4" type="video/mp4">
-                                Votre navigateur ne supporte pas la vidéo
-                            </video>
+                           <img src="acme.png" alt="ACME projet">
                         </div>
-                        <h3 class="zen-apply-lp">
-                            Refonte de la Landing page de ZenApply.io, stage professionnel du 05/01/2026 au 30/01/2026.
+                        <h3 class="acme">
+                            ACME – Landing Page
                         </h3>
+                        <p>
+                            Conception et intégration d'une landing page vitrine pour le projet ACME, avec un focus sur l'ergonomie, la clarté du message et l'optimisation de l'expérience utilisateur.
+                        </p>
                     </div>
-                    <a href="https://zenapply.io/">Voir le projet</a>
                 </div>
-
             </div>
+
+            <div class="projects-container">
+                <div class="section-projects" data-project-type="landing">
+                    <div>
+                        <div class="project-media">
+                           <img src="hexo.png" alt="hexo">
+                        </div>
+                        <h3 class="hexo">
+                           Hexo – Entraînement à la reproduction de site web 
+                        </h3>
+                        <p>
+                            Projet d'entraînement consistant à reproduire fidèlement l'interface et la structure d'un site web existant, dans le but de renforcer les compétences en intégration HTML/CSS et d'animations avec Javascript et sa librairie GSAP et en respect des bonnes pratiques du web.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-container">
+                <div class="section-projects" data-project-type="landing" data-carousel="huhu">
+                    <div>
+                        <div class="project-media">
+                        <img src="huhu01.jpg" alt="huhu">
+                        </div>
+                        <h3 class="huhu">
+                        Plateforme de ventes aux enchères de chevaux en ligne                       
+                        </h3>
+                        <p>
+                            Développement d'un concept de plateforme web dédiée aux ventes aux enchères de chevaux en ligne, intégrant une interface utilisateur claire et des fonctionnalités adaptées au domaine équestre.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="huhu-images" style="display: none;">
+                <img src="huhu01.jpg" alt="Page d'accueil Huhu">
+                <img src="huhu02.jpg" alt="Catalogue des enchères Huhu">
+                <img src="huhu03.jpg" alt="Page de contact Huhu">
+                <img src="huhu04.jpg" alt="Gestion des chevaux, uniquement pour l'organisateur et l'administrateur d'Huhu">
+                <img src="huhu05.jpg" alt="Liste des chevaux Huhu">
+                <img src="huhu06.jpg" alt="Fiche info du cheval Huhu">
+                <img src="huhu07.jpg" alt="Profil Huhu">
+                <img src="huhu08.jpg" alt="Ajouter un cheval Huhu">
+            </div>
+            
         </div>
     </section>
 
-    <!-- Expertise Section -->
     <section id="competences" class="expertise">
         <div class="section-header">
             <h2>Mes compétences</h2>
@@ -130,7 +169,6 @@
     </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -148,63 +186,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Initialiser avec le filtre landing par défaut
-        window.addEventListener('DOMContentLoaded', function() {
-            const landingBtn = document.querySelector('.filter-btn[data-filter="landing"]');
-            if (landingBtn) {
-                landingBtn.click();
-            }
-        });
-
-        // Gestion des clics sur les liens du titre hero
-        document.querySelectorAll('.hero-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const category = this.dataset.category;
-                const filterMap = {
-                    'web': 'web',
-                    'landing': 'landing',
-                    'mobile': 'mobile'
-                };
-                
-                // Scroll vers la section projets
-                const projectsSection = document.getElementById('projets');
-                projectsSection.scrollIntoView({ behavior: 'smooth' });
-                
-                // Activer le filtre correspondant
-                setTimeout(() => {
-                    const filterBtn = document.querySelector(`.filter-btn[data-filter="${filterMap[category]}"]`);
-                    if (filterBtn) {
-                        filterBtn.click();
-                    }
-                }, 500);
-            });
-        });
-
-        // Gestion des boutons de filtre
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const filter = this.dataset.filter;
-                
-                // Mettre à jour le style des boutons
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Filtrer les projets
-                document.querySelectorAll('.section-projects').forEach(project => {
-                    if (filter === 'all') {
-                        project.style.display = 'block';
-                    } else {
-                        if (project.dataset.projectType === filter) {
-                            project.style.display = 'block';
-                        } else {
-                            project.style.display = 'none';
-                        }
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
