@@ -295,7 +295,6 @@ HERO SECTION
     display: block;
     border-radius: 20px;
     border: 4px solid var(--accent-lime);
-    box-shadow: 0 20px 60px rgba(204, 255, 0, 0.2);
 }
 
 .profile-decoration {
@@ -777,11 +776,6 @@ HERO SECTION
     background-color: #0f0f0f;
     border-radius: 5px;
     padding: 10px;
-   }
-   
-   .cv-buttons:hover {
-    cursor: pointer;
-    background-color: #1a1a1a;
    }
 
    .cv-buttons a {
